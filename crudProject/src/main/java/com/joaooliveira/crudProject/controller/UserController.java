@@ -20,7 +20,7 @@ public class UserController {
         return  ResponseEntity.ok().build();
     }
 
-    @GetMapping  // GET /users or GET /users?email=john@example.com
+    @GetMapping  // GET /users or GET /users?id=1
     public ResponseEntity<?> getUsers(@RequestParam(required = false) Integer id){
         if (id != null) {
             return ResponseEntity.ok(userService.getUserById(id));
@@ -28,14 +28,14 @@ public class UserController {
         return ResponseEntity.ok(userService.getAllUsers());
     }
 
-    // DELETE /users?email=john@example.com
+    // DELETE /users?id=1
     @DeleteMapping
     public ResponseEntity<Void> deleteUserById(@RequestParam Integer id){
         userService.deleteUserById(id);
         return  ResponseEntity.ok().build();
     }
 
-    // DELETE /users?id=john@example.com
+    // DELETE /users?id=1
     @PutMapping
     public ResponseEntity<Void> updateUserById(@RequestParam Integer id, @RequestBody User user){
         userService.updateUserById(id, user);
