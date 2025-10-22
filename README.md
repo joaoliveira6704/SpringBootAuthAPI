@@ -47,6 +47,9 @@ A simple Spring Boot REST API application for managing users with basic CRUD (Cr
      - Username: `sa`
      - Password: (leave empty)
 
+5. **Access the swagger-ui**
+   - Base URL: `http://localhost:8080/swagger-ui/index.html`
+
 ## 📡 API Endpoints
 
 ### User Management
@@ -142,7 +145,6 @@ spring.datasource.password=
 - [ ] Add pagination for list endpoints
 - [ ] Switch to PostgreSQL for production
 - [ ] Add unit and integration tests
-- [ ] Add API documentation (Swagger/OpenAPI)
 - [ ] Add exception handling
 - [ ] Add logging
 
