@@ -28,6 +28,11 @@ public class UserController {
         return ResponseEntity.ok(userService.getAllUsers());
     }
 
+    @GetMapping("/{id}") //GET /users/id
+    public ResponseEntity<?> getUserById(@PathVariable Integer id) {
+        return ResponseEntity.ok(userService.getUserById(id));
+    }
+
     // DELETE /users?id=1
     @DeleteMapping
     public ResponseEntity<Void> deleteUserById(@RequestParam Integer id){

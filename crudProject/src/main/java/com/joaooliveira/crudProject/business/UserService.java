@@ -27,8 +27,14 @@ public class UserService {
 
     //Returns user by id
     public User getUserById(Integer id){
-        // Return email or return message case not found
         return repository.findById(id).orElseThrow(
+                () -> new RuntimeException("User not found!")
+        );
+    }
+
+    public User getUserByEmail(String email){
+        // Return email or return message case not found
+        return repository.findByEmail(email).orElseThrow(
                 () -> new RuntimeException("User not found!")
         );
     }
